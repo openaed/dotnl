@@ -6,9 +6,9 @@ function MapLocation(name, locations, url) {
     window.location.href = url;
   }
 
-  let locs = locations.join(", ");
+  let locs = locations.sort().join(", ");
   return (
-    <Col className="location py-2" onClick={goToMap}>
+    <Col className="location py-2 col-3" onClick={goToMap}>
       <b>{name}</b>
       <br />
       <small>
