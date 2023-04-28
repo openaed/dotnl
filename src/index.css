@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-Regular.ttf");
+  font-weight: 400;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("./fonts/OpenSans/OpenSans-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+  font-family: "Open Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+navbar-brand {
+  font-family: "Open Sans Bold";
+}
+
+.td-none {
+  text-decoration: none !important;
+}
+
+.location {
+  transition: 0.2s;
+  background-color: #f5f5f5;
+  margin: 0.1em;
+}
+
+a {
+  color: inherit !important;
+}
+
+.location:hover {
+  cursor: pointer;
+  background-color: #4f996b;
+  color: white;
+}
+
+.bg-aed {
+  background-image: url("https://hartslagnu.nl/wp-content/uploads/2020/01/aed-kast.jpg"); /* Placeholder, no rights to use this */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero {
+  height: fit-content;
+}
+
+.hero-content > * {
+  text-shadow: #1f1f1f 0 0 0.25em;
 }
