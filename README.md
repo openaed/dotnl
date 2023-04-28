@@ -15,8 +15,10 @@ For example, the map for the city of Amsterdam is available at [https://amsterda
 
 Data for OpenAED is structured as such:
 
-A map can be of a city, or a region. The name of the map is either the name of the city, or the name of the region. This name is used in the subdomain of the map.
-A map also has a list of the villages that are part of the region. For example, the Amsterdam map contains only the city of Amsterdam, but the Nijmegen map contains the city of Nijmegen, and the villages of Beek, Berg en Dal, Heilig Landstichting, Ubbergen, Wijchen, Beuningen, Malden, Heumen, Nederasselt and Overasselt.
+A map can be of a city, or a region. The name of the map is either the name of the city, or the name of the region. This name is used in the subdomain of the map.  
+A map also has a list of the villages that are part of the region.
+
+For example, the Amsterdam map contains only the city of Amsterdam, but the Nijmegen map contains the city of Nijmegen and the villages of Groesbeek, Beek, Berg en Dal, Heilig Landstichting, Ubbergen, Wijchen, Beuningen, Malden, Heumen, Nederasselt and Overasselt.
 
 AED data looks like this:
 
@@ -45,10 +47,10 @@ AED data looks like this:
 ```
 
 `id` is the ID of the node in OpenStreetMap.
-`coordinates` is a dictionary containing the latitude and longitude of the AED.
-The rest of the keys are copied from OpenStreetMap keys.
-Any keys that do not have a value in OpenStreetMap are assigned a value of `null`.
-The key `operator` is "Onbekende beheerder" if the operator is unknown.
+`coordinates` is a dictionary containing the latitude and longitude of the AED.  
+The rest of the keys are copied from OpenStreetMap keys.  
+Any keys that do not have a value in OpenStreetMap are assigned a value of `null`.  
+The key `operator` is "Onbekende beheerder" if the operator is unknown.  
 Once OpenAED is international, this key will be translated to the local language.
 
 ## OpenStreetMap
