@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# OpenAED
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+OpenAED is an initiative to create easily usable AED maps. The project is starting out in the Netherlands, with a select few cities (or regions around them) to start with.
 
-In the project directory, you can run:
+## Where can I find OpenAED?
 
-### `npm start`
+OpenAED is available on the web at [https://openaed.nl](https://openaed.nl).
+From there, you can select a city or region to view the AEDs in that area.
+The maps use subdomains based on the name of the city and/or region.
+For example, the map for the city of Amsterdam is available at [https://amsterdam.openaed.nl](https://amsterdam.openaed.nl).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Data
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Data for OpenAED is structured as such:
 
-### `npm test`
+A map can be of a city, or a region. The name of the map is either the name of the city, or the name of the region. This name is used in the subdomain of the map.
+A map also has a list of the villages that are part of the region. For example, the Amsterdam map contains only the city of Amsterdam, but the Nijmegen map contains the city of Nijmegen, and the villages of Beek, Berg en Dal, Heilig Landstichting, Ubbergen, Wijchen, Beuningen, Malden, Heumen, Nederasselt and Overasselt.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+AED data looks like this:
 
-### `npm run build`
+```JSON
+{
+    "id": 1414423917,
+    "access": "yes",
+    "locked": null,
+    "coordinates": {
+        "lat": 51.7615842,
+        "lon": 5.7858333
+    },
+    "indoor": "no",
+    "operator": "De Stichting Hulp Bij Hartstilstand Gemeente Heumen",
+    "operator:website": null,
+    "phone": "+31 6 50936458",
+    "location": "links naast hoofdingang",
+    "location:en": "to the left of main entrance",
+    "defibrillator:case:manufacturer": null,
+    "defibrillator:case": null,
+    "manufacturer": null,
+    "level": 0,
+    "image": null,
+    "opening_hours": null
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`id` is the ID of the node in OpenStreetMap.
+`coordinates` is a dictionary containing the latitude and longitude of the AED.
+The rest of the keys are copied from OpenStreetMap keys.
+Any keys that do not have a value in OpenStreetMap are assigned a value of `null`.
+The key `operator` is "Onbekende beheerder" if the operator is unknown.
+Once OpenAED is international, this key will be translated to the local language.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## OpenStreetMap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+OpenAED uses OpenStreetMap as its data source, licensed under the [Open Data Commons Open Database License](https://opendatacommons.org/licenses/odbl/). Therefore, the data exposed by OpenAED is available under the same license.
