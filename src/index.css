@@ -45,7 +45,8 @@ a {
 }
 
 .bg-aed {
-  background-image: url("https://hartslagnu.nl/wp-content/uploads/2020/01/aed-kast.jpg"); /* Placeholder, no rights to use this */
+  /* background-image: url("https://hartslagnu.nl/wp-content/uploads/2020/01/aed-kast.jpg"); Placeholder, no rights to use this */
+  background-color: #4f996b;
   background-size: cover;
   background-position: center;
 }
