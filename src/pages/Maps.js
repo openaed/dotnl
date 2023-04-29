@@ -1,5 +1,3 @@
-import Database from "../Database";
-
 export default function GetMaps() {
   const maps = [
     // This will be a database in the future
