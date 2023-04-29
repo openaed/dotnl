@@ -1,7 +1,7 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 
-function MapLocation(name, locations, url) {
+function MapLocation({ name, locations, url }) {
   function goToMap() {
     window.location.href = url;
   }
@@ -11,9 +11,7 @@ function MapLocation(name, locations, url) {
     <Col className="location py-2 col-3" onClick={goToMap}>
       <b>{name}</b>
       <br />
-      <small>
-        Plaats{locations.length > 1 ? "namen" : "naam"} {locs}
-      </small>
+      <small>{locs}</small>
     </Col>
   );
 }

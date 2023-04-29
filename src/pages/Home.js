@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import MapLocation from "../MapLocation";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import GetMaps from "./Maps";
 
-const locs = GetMaps();
-
-let MapLocations = [];
-
-locs.forEach((loc) => {
-  MapLocations.push(MapLocation(loc.name, loc.locations, loc.url));
-});
-
 function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function doTheThing() {
+      const locs = await GetMaps();
+      setData(locs);
+    }
+
+    doTheThing();
+  }, []);
+
   return (
     <>
       <Row className="text-center bg-aed hero">
@@ -37,7 +40,16 @@ function Home() {
         <Row className="mt-3">
           <h2>Plaatsen</h2>
           <Row className="row-cols-md-4 row-cols-1 text-center gap-2">
-            {MapLocations}
+            {data.map((map) => {
+              return (
+                <MapLocation
+                  name={map.name}
+                  locations={map.locations}
+                  url={map.url}
+                  key={map.name}
+                />
+              );
+            })}
           </Row>
         </Row>
       </Container>
