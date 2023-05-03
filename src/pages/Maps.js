@@ -26,7 +26,7 @@ export default async function GetMaps() {
 
       return {
         name: placesResult.data.name,
-        locations: placesResult.data.places,
+        locations: placesResult.data.description,
         url: `https://${map}.openaed.nl/`,
       };
     })
