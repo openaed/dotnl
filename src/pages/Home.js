@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import MapLocation from "../MapLocation";
 import { Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 import GetMaps from "./Maps";
 
 function Home() {
@@ -39,7 +40,7 @@ function Home() {
       <Container>
         <Row className="mt-3">
           <h2>Plaatsen</h2>
-          <Row className="row-cols-md-4 row-cols-1 text-center gap-2">
+          <Row sm={1} md={4} className="text-center gap-2">
             {data.map((map) => {
               return (
                 <MapLocation

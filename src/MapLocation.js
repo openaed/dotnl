@@ -7,7 +7,7 @@ function MapLocation({ name, locations, url }) {
   }
 
   return (
-    <Col className="location py-2 col-3" onClick={goToMap}>
+    <Col sm="12" md="3" className="location py-2" onClick={goToMap}>
       <b>{name}</b>
       <br />
       <small>{locations}</small>
