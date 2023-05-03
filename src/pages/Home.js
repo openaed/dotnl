@@ -44,7 +44,7 @@ function Home() {
               return (
                 <MapLocation
                   name={map.name}
-                  locations={map.locations}
+                  locations={map.description}
                   url={map.url}
                   key={map.name}
                 />
