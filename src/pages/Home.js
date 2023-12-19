@@ -39,7 +39,27 @@ function Home() {
       </Row>
       <Container>
         <Row className="mt-3">
-          <h2>Plaatsen</h2>
+          <Col id="project">
+            <h2>Het project</h2>
+            <p>
+              Het doel van OpenAED is om een overzicht te krijgen van alle AEDs
+              in Nederland, op basis van OpenStreetMap data. <br />
+              Het project is open-source, en de data is vrij beschikbaar.
+            </p>
+          </Col>
+          <Col id="aed">
+            <h2>Wat is een AED?</h2>
+            <p>
+              Een AED, ofwel <i>Automatische Externe Defibrillator</i>, is een
+              apparaat dat wordt gebruikt om een elektrische schok toe te dienen
+              aan het hart van een persoon met een hartstilstand. Ze spelen een
+              belangrijke rol bij een reanimatie - alleen mét een AED is er kans
+              op overleven.
+            </p>
+          </Col>
+        </Row>
+        <Row className="mt-3 p-0" id="maps">
+          <h2>Kaarten</h2>
           <Row sm={1} md={4} className="text-center gap-2">
             {data.map((map) => {
               return (
