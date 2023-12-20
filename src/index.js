@@ -15,6 +15,7 @@ import "./fonts/OpenSans/OpenSans-Italic.ttf";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import WrongAED from "./pages/WrongAED";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="foute-aed" element={<WrongAED />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
