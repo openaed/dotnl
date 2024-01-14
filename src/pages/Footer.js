@@ -17,8 +17,8 @@ function Footer() {
               <li>
                 <EnvelopeAtFill />
                 &nbsp;
-                <Link to="mailto:openaed@ptdk.nl" target="_blank">
-                  openaed@ptdk.nl
+                <Link to="mailto:info@openaed.nl" target="_blank">
+                  info@openaed.nl
                 </Link>
               </li>
             </ul>
@@ -96,8 +96,10 @@ function Footer() {
         </Row>
         <Row>
           <small className="fst-italic">
-            &copy; 2023 potato donkey - OpenAED is niet aansprakelijk voor
+            &copy; 2024 potato donkey - OpenAED is niet aansprakelijk voor
             onjuiste informatie, noch de eventuele gevolgen daarvan.
+            <br />
+            OpenAED is geen onderdeel van OpenStreetMap.
           </small>
         </Row>
       </Container>
